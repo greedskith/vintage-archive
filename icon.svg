@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <rect width="512" height="512" fill="#000000"/>
+  <!-- Outer CRT Chassis -->
+  <rect x="48" y="64" width="416" height="320" rx="0" fill="none" stroke="#FF6B6B" stroke-width="16"/>
+  <!-- Inner CRT Screen -->
+  <rect x="76" y="92" width="360" height="264" rx="0" fill="#000000" stroke="#FF6B6B" stroke-width="8"/>
+  <!-- CRT Scanlines -->
+  <line x1="76" y1="140" x2="436" y2="140" stroke="#FF6B6B" stroke-width="2" opacity="0.4"/>
+  <line x1="76" y1="180" x2="436" y2="180" stroke="#FF6B6B" stroke-width="2" opacity="0.4"/>
+  <line x1="76" y1="220" x2="436" y2="220" stroke="#FF6B6B" stroke-width="2" opacity="0.4"/>
+  <line x1="76" y1="260" x2="436" y2="260" stroke="#FF6B6B" stroke-width="2" opacity="0.4"/>
+  <line x1="76" y1="300" x2="436" y2="300" stroke="#FF6B6B" stroke-width="2" opacity="0.4"/>
+  <!-- Play Triangle -->
+  <polygon points="230,175 315,224 230,273" fill="#FF6B6B"/>
+  <!-- Monitor Base & Stand -->
+  <polygon points="192,384 320,384 352,432 160,432" fill="none" stroke="#FF6B6B" stroke-width="14"/>
+  <line x1="128" y1="432" x2="384" y2="432" stroke="#FF6B6B" stroke-width="16"/>
+  <!-- Power LED -->
+  <rect x="404" y="360" width="12" height="12" fill="#FF6B6B"/>
+</svg>

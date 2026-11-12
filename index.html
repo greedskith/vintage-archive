@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Historic Archive · Horizontal Reel</title>
+  <link rel=manifest href=./manifest.json>
+  <meta name=theme-color content=#000000>
+  <meta name=apple-mobile-web-app-capable content=yes>
+  <meta name=apple-mobile-web-app-status-bar-style content=black-translucent>
+  <link rel=icon type=image/svg+xml href=./icon.svg>
+  <link rel=apple-touch-icon href=./icon-192.png>
   <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
   <style>
 /* Curated WOFF2 Subsetted Fonts (~64KB total Base64) */
@@ -1254,6 +1260,14 @@
     // Ping immediately on load, then every 5 seconds
     pingHeartbeat();
     setInterval(pingHeartbeat, 5000);
+  </script>
+  <!-- Progressive Web App Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js').catch(() => {});
+      });
+    }
   </script>
 </body>
 
