@@ -1023,7 +1023,7 @@
             biliRes = await fetch('/api/bilibili?q=' + encodeURIComponent(query));
             if (!biliRes.ok) throw new Error('Local proxy not available');
           } catch(e) {
-            biliRes = await fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent('https://api.bilibili.com/x/web-interface/search/type?search_type=video&keyword=' + encodeURIComponent(query)));
+            biliRes = await fetch('https://vintage-archive-deploy.vercel.app/api/bilibili?q=' + encodeURIComponent(query));
           }
 
           const biliData = await biliRes.json();
