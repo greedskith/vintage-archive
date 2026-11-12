@@ -2,7 +2,7 @@
   "name": "Vintage Tube Archive",
   "short_name": "VintageTube",
   "start_url": "./index.html",
-  "display": "standalone",
+  "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#000000",
   "description": "Cybernetic CRT vintage video and audio archive",
