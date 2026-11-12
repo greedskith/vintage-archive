@@ -89,7 +89,7 @@
 }
 
 .font-bankgothic {
-  font-family: 'BankGothic-Embedded', 'BankGothic', '20db-Embedded', '20 db';
+  font-family: 'BankGothic-Embedded', 'BankGothic', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace, sans-serif;
   letter-spacing: 0.04em;
 }
 
@@ -173,8 +173,9 @@
     }
   </style>
 </head>
-<div id="dropdown-backdrop" class="hidden fixed inset-0 bg-[#000000]/75 z-40 backdrop-blur-[2px]" onclick="closeAllDropdowns()"></div>
-<body data-theme="coral" class="font-bankgothic antialiased min-h-screen p-3 sm:p-6 md:p-8 transition-colors duration-150 overflow-x-hidden">
+
+<body data-theme="coral" class="font-bankgothic antialiased min-h-screen p-3 sm:p-6 md:p-8 transition-colors duration-150 overflow-x-hidden pt-[max(0.75rem,env(safe-area-inset-top))] pb-[max(0.75rem,env(safe-area-inset-bottom))] px-[max(0.75rem,env(safe-area-inset-left))] pr-[max(0.75rem,env(safe-area-inset-right))]">
+  <div id="dropdown-backdrop" class="hidden fixed inset-0 bg-[#000000]/75 z-40 backdrop-blur-[2px]" onclick="closeAllDropdowns()"></div>
 
   <div class="max-w-5xl mx-auto space-y-6">
 
@@ -193,12 +194,22 @@
       <!-- RETRO CUSTOM DROPDOWNS -->
       <div class="flex flex-col sm:items-end gap-2 w-full sm:w-auto">
         <!-- ALL-PLATFORMS QUOTA METER STRIP -->
-        <div class="flex flex-wrap items-center text-[10px] opacity-80 uppercase tracking-wider font-bankgothic gap-x-2.5 gap-y-1">
-          <span>YT: <b id="yt-quota-display">0/100</b></span>
-          <span>VM: <b id="vm-quota-display">48/50</b></span>
-          <span>DM: <b id="dm-quota-display">&#8734;</b></span>
-          <span>BILI: <b id="bili-quota-display">&#8734;</b></span>
-          <span>IA: <b id="ia-quota-display">&#8734;</b></span>
+        <div class="flex flex-wrap items-center justify-between gap-2 w-full text-[10px] opacity-80 uppercase tracking-wider font-bankgothic">
+          <div class="flex flex-wrap items-center gap-x-2.5 gap-y-1">
+            <span>YT: <b id="yt-quota-display">0/100</b></span>
+            <span>VM: <b id="vm-quota-display">48/50</b></span>
+            <span>DM: <b id="dm-quota-display">&#8734;</b></span>
+            <span>BILI: <b id="bili-quota-display">&#8734;</b></span>
+            <span>IA: <b id="ia-quota-display">&#8734;</b></span>
+          </div>
+          <button 
+            type="button" 
+            id="fullscreen-toggle-btn" 
+            onclick="toggleImmersiveFullscreen()" 
+            class="border theme-accent-border px-2 py-0.5 hover:theme-accent-bg hover:text-[#000000] active:scale-[0.98] transition-colors text-[9px] font-bold" 
+            title="Toggle immersive fullscreen (hides notification bar)">
+            ⛶ FULLSCREEN
+          </button>
         </div>
 
         <div class="flex items-center gap-2 w-full sm:w-auto">
@@ -312,7 +323,7 @@
           <button 
             type="submit" 
             id="search-btn" 
-            class="px-6 py-2 border-2 theme-accent-border theme-accent-bg text-[#000000] font-bold text-xs uppercase active:scale-[0.98] transition-transform shrink-0">
+            class="px-6 py-2 border-2 theme-accent-border theme-accent-bg text-[#000000] font-bankgothic font-bold text-xs uppercase active:scale-[0.98] transition-transform shrink-0">
             Search
           </button>
         </div>
@@ -756,11 +767,18 @@
     /* --- YEAR SELECTOR --- */
     function onYearChange() {
       const val = document.getElementById('year-select').value;
+      const titleEl = document.getElementById('header-title');
+      const descEl = document.getElementById('header-desc');
+      const platformNames = { youtube: 'YouTube', vimeo: 'Vimeo', dailymotion: 'DailyMotion', bilibili: 'Bilibili', archive: 'Internet Archive' };
+      const pName = platformNames[currentPlatform] || 'Archive';
+
       if (!val) {
-        document.getElementById('header-title').textContent = "ALL TIME ARCHIVE";
+        titleEl.textContent = "ALL TIME ARCHIVE";
+        if (descEl) descEl.textContent = 'All historical and contemporary ' + pName + ' videos without cutoff constraint.';
       } else {
         const year = val.substring(0, 4);
-        document.getElementById('header-title').textContent = "BEFORE " + year;
+        titleEl.textContent = "BEFORE " + year;
+        if (descEl) descEl.textContent = 'Videos uploaded to ' + pName + ' strictly before the ' + year + ' cutoff date.';
       }
       // Zero auto-search: preserves quota until user clicks Search
     }
@@ -1226,7 +1244,7 @@
           </div>
         `;
       } finally {
-        btn.textContent = "SEARCH";
+        btn.textContent = "Search";
       }
     }
 
