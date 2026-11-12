@@ -182,7 +182,7 @@
     <header class="border-b-2 theme-accent-border pb-4 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
       <div>
         <div id="header-slogan" class="font-autograf text-xl sm:text-2xl md:text-3xl theme-accent-text leading-[1.2] py-0.5">Broadcast Yourself</div>
-        <h1 id="header-title" class="font-20db text-3xl sm:text-5xl md:text-6xl theme-accent-text leading-tight mt-0.5 whitespace-nowrap">
+        <h1 id="header-title" class="font-20db text-2xl sm:text-4xl md:text-5xl theme-accent-text leading-tight mt-0.5 break-words">
           HISTORIC ARCHIVE
         </h1>
         <p id="header-desc" class="text-xs md:text-sm theme-accent-text opacity-90 mt-2 max-w-[65ch]">
@@ -214,46 +214,41 @@
               <span class="text-[8px] opacity-75 ml-1">▼</span>
             </button>
 
-            <!-- Mobile Centered Modal / Desktop Dropdown Menu -->
             <div 
               id="source-dropdown-menu" 
-              class="hidden fixed sm:absolute left-4 right-4 sm:left-auto sm:right-0 top-1/2 -translate-y-1/2 sm:translate-y-0 sm:top-full mt-0 sm:mt-1 z-50 border-2 theme-accent-border bg-[#000000] divide-y theme-accent-border sm:min-w-[220px] shadow-none">
-              <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-wider border-b theme-accent-border flex items-center justify-between bg-[#000000]">
-                <span>SELECT PLATFORM</span>
-                <span class="opacity-60 text-[9px] sm:hidden">[TAP OUTSIDE TO CLOSE]</span>
-              </div>
+              class="hidden absolute left-0 sm:left-auto sm:right-0 top-full mt-1 z-50 border-2 theme-accent-border bg-[#000000] divide-y theme-accent-border min-w-full sm:min-w-[200px] shadow-2xl">
               <button 
                 type="button" 
                 onclick="selectPlatform('youtube')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>YouTube</span>
                 <span id="opt-quota-yt" class="text-[10px] opacity-80">0/100</span>
               </button>
               <button 
                 type="button" 
                 onclick="selectPlatform('vimeo')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>Vimeo</span>
                 <span id="opt-quota-vm" class="text-[10px] opacity-80">48/50</span>
               </button>
               <button 
                 type="button" 
                 onclick="selectPlatform('dailymotion')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>DailyMotion</span>
                 <span class="text-[10px] opacity-80">&#8734;</span>
               </button>
               <button 
                 type="button" 
                 onclick="selectPlatform('bilibili')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>Bilibili</span>
                 <span class="text-[10px] opacity-80">&#8734;</span>
               </button>
               <button 
                 type="button" 
                 onclick="selectPlatform('archive')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>Archive.org</span>
                 <span class="text-[10px] opacity-80">&#8734;</span>
               </button>
@@ -272,32 +267,27 @@
               <span class="text-[8px] opacity-75 ml-1">▼</span>
             </button>
 
-            <!-- Mobile Centered Modal / Desktop Dropdown Menu -->
             <div 
               id="theme-dropdown-menu" 
-              class="hidden fixed sm:absolute left-4 right-4 sm:left-auto sm:right-0 top-1/2 -translate-y-1/2 sm:translate-y-0 sm:top-full mt-0 sm:mt-1 z-50 border-2 theme-accent-border bg-[#000000] divide-y theme-accent-border sm:min-w-[150px] shadow-none">
-              <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-wider border-b theme-accent-border flex items-center justify-between bg-[#000000]">
-                <span>SELECT THEME</span>
-                <span class="opacity-60 text-[9px] sm:hidden">[TAP OUTSIDE TO CLOSE]</span>
-              </div>
+              class="hidden absolute right-0 top-full mt-1 z-50 border-2 theme-accent-border bg-[#000000] divide-y theme-accent-border min-w-full sm:min-w-[130px] shadow-2xl">
               <button 
                 type="button" 
                 onclick="selectTheme('coral')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>Coral</span>
                 <span class="w-2.5 h-2.5 bg-[#FF6B6B] border border-[#000000]"></span>
               </button>
               <button 
                 type="button" 
                 onclick="selectTheme('cyan')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>Cyan</span>
                 <span class="w-2.5 h-2.5 bg-[#00F0FF] border border-[#000000]"></span>
               </button>
               <button 
                 type="button" 
                 onclick="selectTheme('seafoam')" 
-                class="w-full flex items-center justify-between px-3 py-2.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
+                class="w-full flex items-center justify-between px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">
                 <span>Seafoam</span>
                 <span class="w-2.5 h-2.5 bg-[#2EE59D] border border-[#000000]"></span>
               </button>
@@ -414,11 +404,7 @@
 
               <div 
                 id="cutoff-dropdown-menu" 
-                class="hidden fixed sm:absolute left-4 right-4 sm:left-auto sm:right-0 top-1/2 -translate-y-1/2 sm:translate-y-0 sm:top-full mt-0 sm:mt-1 z-50 border-2 theme-accent-border bg-[#000000] divide-y theme-accent-border sm:min-w-[160px] max-h-[320px] overflow-y-auto shadow-none">
-                <div class="px-3 py-2 text-[10px] font-bold uppercase tracking-wider border-b theme-accent-border flex items-center justify-between bg-[#000000]">
-                  <span>SELECT ERA CUTOFF</span>
-                  <span class="opacity-60 text-[9px] sm:hidden">[TAP OUTSIDE]</span>
-                </div>
+                class="hidden absolute left-0 sm:left-auto sm:right-0 top-full mt-1 z-50 border-2 theme-accent-border bg-[#000000] divide-y theme-accent-border min-w-[150px] max-h-[220px] overflow-y-auto shadow-2xl">
                 <button type="button" onclick="selectCutoff('2006-01-01', 'Before 2006')" class="w-full px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">Before 2006</button>
                 <button type="button" onclick="selectCutoff('2008-01-01', 'Before 2008')" class="w-full px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">Before 2008</button>
                 <button type="button" onclick="selectCutoff('2010-01-01', 'Before 2010')" class="w-full px-3 py-1.5 text-xs font-bankgothic uppercase hover:theme-accent-bg hover:text-[#000000] transition-colors text-left theme-accent-text">Before 2010</button>
